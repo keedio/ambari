@@ -16,18 +16,19 @@
 * limitations under the License.
 }}
 
-<a class="services-menu-blocks" {{bindAttr href="view.link"}}>
-  {{#if view.alertsCount}}
+<a {{bindAttr href="view.link"}}>
+ 
+  <span class="fa icon-health-block">
+    {{view App.MainDashboardServiceHealthView class="service-health" serviceBinding="view.content"}}&nbsp;
+  </span>
+  <span class="service-name-block">
+    <span>{{unbound view.content.displayName}}</span>
+  </span>
+   {{#if view.alertsCount}}
     <span {{bindAttr class=":label :alerts-count view.hasCriticalAlerts:alerts-crit-count:alerts-warn-count"}}>
       {{view.alertsCount}}
     </span>
   {{/if}}
-
-  <div class="icon-health-block">
-    {{view App.MainDashboardServiceHealthView class="service-health" serviceBinding="view.content"}}&nbsp;
-  </div>
-  <div class="service-name-block">
-    <span>{{unbound view.content.displayName}}</span>
-  </div>
+  
   <i rel="tooltip" {{action goToConfigs target="view"}}{{bindAttr class=":icon-refresh :restart-required-service view.content.isRestartRequired::hidden" data-original-title="view.restartRequiredMessage"}}></i>
 </a>

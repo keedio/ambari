@@ -11,6 +11,7 @@ target
 /ambari-web/public/
 /ambari-web/node_modules/
 /ambari-web/node/
+/ambari-web/app/assets/bower_components/
 *.pyc
 *.py~
 *.iml

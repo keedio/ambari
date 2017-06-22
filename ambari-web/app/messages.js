@@ -19,7 +19,7 @@
 Em.I18n.translations = {
 
   'app.name':'Ambari',
-  'app.name.subtitle':'Ambari - {0}',
+  'app.name.subtitle':'KDS-Manager',
   'app.name.subtitle.experimental':'Ambari Experimental',
   'app.reloadPopup.link': 'Reload Page',
   'app.reloadPopup.text': 'Trying to connect to server...',

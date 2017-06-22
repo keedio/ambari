@@ -55,10 +55,10 @@ App.MainServiceMenuView = Em.CollectionView.extend({
   },
 
   tagName:'ul',
-  classNames:[ "nav", "nav-list", "nav-services"],
+  classNames:[ "list-group"],
 
   itemViewClass:Em.View.extend({
-
+	classNames:[ "list-group-item"],
     classNameBindings:["active", "clients"],
     templateName:require('templates/main/service/menu_item'),
     restartRequiredMessage: null,
