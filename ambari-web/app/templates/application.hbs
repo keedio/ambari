@@ -24,10 +24,11 @@
 <div id="main">
 <div id="top-nav">
   <nav class="navbar navbar-pf-vertical navbar navbar-static-top" >
-  <div class="navbar-header" > 
+  <nav class="collapse navbar-collapse">
+    <div class="navbar-header" > 
   {{#if enableLinks}}	
-    <a {{translateAttr href="topnav.logo.href"}} class="navbar-brand"> <img
-			class="navbar-brand-icon" src="/img/logo_kds.svg" alt="" style="width: 350px;">
+    <a {{translateAttr href="topnav.logo.href"}} class="navbar-brand" style="margin-left:10px;"> <img
+			class="navbar-brand-icon" src="/img/logo_kmanager.svg" alt="" style="width: 350px;">
 		</a>
 		 <a class="brand cluster-name" href="javascript:void(null);" {{bindAttr title="clusterName"}}>
 	      {{#unless App.isClusterUser}}
@@ -56,12 +57,11 @@
             {{/if}}
             </a>
 	      {{else}}
-            <a  class="navbar-brand"> <img class="navbar-brand-icon" src="/img/logo_kds.svg" alt="" style="width: 350px;"></a>
+            <a  class="navbar-brand"> <img class="navbar-brand-icon" src="/img/logo_kmanager.svg" alt="" style="width: 350px;"></a>
           {{/if}}
   </div>
-  
-  <nav class="collapse navbar-collapse">
    {{#if App.router.loggedIn}}
+
     <ul class="nav navbar-nav navbar-right navbar-iconic">
 
       <li class="dropdown">
@@ -93,13 +93,15 @@
                   {{/isAuthorized}}
                 {{/if}}
                 {{#if showExitLink}}
-                  <li class="break"></li>
+                  <li></li>
                   <li><a href="" id="sign-out" {{action logoff}}>{{t app.signout}}</a></li>
                 {{/if}}
         </ul>
       </li>
       
-    </ul>
+    </ul>      
+    {{view App.MainMenuView}}
+
     {{/if}}
   </nav>
 </nav>
