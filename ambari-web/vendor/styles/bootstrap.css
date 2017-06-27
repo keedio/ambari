@@ -159,7 +159,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "TCM";
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -940,7 +940,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "TCM";
 }
 
 label {
@@ -4303,7 +4303,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "TCM";
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -4906,6 +4906,8 @@ input[type="submit"].btn.btn-mini {
 
 .modal {
   position: fixed;
+  display: block;
+  bottom: auto;
   top: 50%;
   left: 50%;
   z-index: 1050;

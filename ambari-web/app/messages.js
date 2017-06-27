@@ -18,7 +18,7 @@
 
 Em.I18n.translations = {
 
-  'app.name':'Ambari',
+  'app.name':'KDS-Manager',
   'app.name.subtitle':'KDS-Manager',
   'app.name.subtitle.experimental':'Ambari Experimental',
   'app.reloadPopup.link': 'Reload Page',
