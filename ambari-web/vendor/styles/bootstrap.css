@@ -159,7 +159,7 @@ textarea {
 
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "TCM";
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -706,7 +706,7 @@ h4 small {
 ul,
 ol {
   padding: 0;
-  margin: 0 0 10px 25px;
+  /*margin: 0 0 10px 25px;*/
 }
 
 ul ul,
@@ -940,7 +940,7 @@ input,
 button,
 select,
 textarea {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "TCM";
 }
 
 label {
@@ -2756,7 +2756,7 @@ table [class*=span],
 .open .dropdown-toggle {
   outline: 0;
 }
-
+/*
 .caret {
   display: inline-block;
   width: 0;
@@ -2766,7 +2766,7 @@ table [class*=span],
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
   content: "";
-}
+}*/
 
 .dropdown .caret {
   margin-top: 8px;
@@ -4303,7 +4303,7 @@ input[type="submit"].btn.btn-mini {
 .navbar-search .search-query {
   padding: 4px 14px;
   margin-bottom: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "TCM";
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
@@ -4400,7 +4400,7 @@ input[type="submit"].btn.btn-mini {
   padding: 10px 15px 10px;
   color: #777777;
   text-decoration: none;
-  text-shadow: 0 1px 0 #ffffff;
+  /*text-shadow: 0 1px 0 #ffffff;*/
 }
 
 .navbar .nav .dropdown-toggle .caret {
@@ -4519,14 +4519,14 @@ input[type="submit"].btn.btn-mini {
   border-top: 6px solid #ffffff;
   border-bottom: 0;
 }
-
+ /*
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-  color: #555555;
+ color: #555555;
   background-color: #e5e5e5;
 }
-
+*/
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
   border-top-color: #777777;
   border-bottom-color: #777777;
@@ -4906,6 +4906,8 @@ input[type="submit"].btn.btn-mini {
 
 .modal {
   position: fixed;
+  display: block;
+  bottom: auto;
   top: 50%;
   left: 50%;
   z-index: 1050;
