@@ -18,76 +18,119 @@
 <!doctype html>
 <html class="no-js">
 <head>
-  <meta charset="utf-8">
-  <title>Ambari</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <meta charset="utf-8">
+    <title>KDS- Manager</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-  <!-- build:css styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/angular-bootstrap-toggle-switch/style/bootstrap3/angular-toggle-switch-bootstrap-3.css" />
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
-  <!-- endbower -->
-  <!-- endbuild -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
 
-  <!-- build:css styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
+
+    <link rel="stylesheet"
+          href="bower_components/angular-bootstrap-toggle-switch/style/bootstrap3/angular-toggle-switch-bootstrap-3.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="bower_components/patternfly/dist/css/patternfly.min.css">
+    <link rel="stylesheet" href="bower_components/patternfly/dist/css/patternfly-additions.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- jQuery -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- C3, D3 - Charting Libraries -->
+    <script src="bower_components/c3/c3.min.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+
+    <!-- Datatables, jQuery Grid Component -->
+    <!-- Note: jquery.dataTables.js must occur in the html source before patternfly*.js.-->
+    <script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="bower_components/datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="bower_components/datatables-colreorder/js/dataTables.colReorder.js"></script>
+
+    <!-- PatternFly Custom Componets -  Sidebar, Popovers and Datatables Customizations -->
+    <!-- Note: jquery.dataTables.js must occur in the html source before patternfly*.js.-->
+    <script src="bower_components/patternfly/dist/js/patternfly.min.js"></script>
+
+
+    <!-- Bootstrap Date Time Picker - requires Moment -->
+    <script src="bower_components/moment/min/moment.min.js"></script>
+
+    <!-- Bootstrap Date Picker -->
+    <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <!-- Bootstrap Select -->
+    <script src="bower_components/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+
+    <!-- Bootstrap Switch -->
+    <script src="bower_components/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
+
+    <!-- Bootstrap Touchspin -->
+    <script src="bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js"></script>
+
+    <!-- Bootstrap Tree View -->
+    <script src="bower_components/patternfly-bootstrap-treeview/dist/bootstrap-treeview.min.js"></script>
+
+    <!-- Google Code Prettify - Syntax highlighting of code snippets -->
+    <script src="bower_components/google-code-prettify/bin/prettify.min.js"></script>
+
+
+    <!-- build:css styles/main.css -->
+
+    <!-- endbuild -->
 
 </head>
 <body ng-app="ambariAdminConsole">
 <!--[if lt IE 9]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
 <![endif]-->
 
 <div id="top-nav" ng-controller="MainCtrl">
-  <header class="navbar navbar-static-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <a href="{{fromSiteRoot('/#/main/dashboard')}}" class="logo"><img src="/img/logo-white.png" alt="{{'common.apacheAmbari' | translate}}" title="{{'common.apacheAmbari' | translate}}"></a>
-        <a href="{{fromSiteRoot('/#/main/dashboard')}}" class="brand" title="{{'common.apacheAmbari' | translate}}">{{'common.ambari' | translate}}</a>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <div class="btn-group navbar-views-dropdown" dropdown is-open="viewsdropdown.isopen" ng-mouseover="viewsdropdown.isopen=true" ng-mouseout="viewsdropdown.isopen=false">
-              <a href="{{fromSiteRoot('/#/main/views')}}" ng-click="gotoViewsDashboard()" class="dropdown-toggle"><i class="fa fa-th"></i></a>
-              <ul class="dropdown-menu" role="menu">
-                <li ng-repeat="instance in viewInstances"><a href="{{fromSiteRoot('/#/main/views/' + instance.viewUrl)}}" ng-click="about()">{{instance.label}}</a></li>
-                <li ng-show="!viewInstances.length" class="disabled"><a>{{'common.noViews' | translate}}</a></li>
-              </ul>
+    <nav class="navbar navbar-pf-vertical navbar navbar-static-top">
+        <nav class="collapse navbar-collapse">
+            <div class="navbar-header">
+
+                <a class="navbar-brand" href="{{fromSiteRoot('/#/main/dashboard')}}"> <img class="navbar-brand-icon"
+                                                                                           src="/img/logo_kmanager.svg"
+                                                                                           alt=""
+                                                                                           style="width: 350px;"></a>
+
             </div>
-          </li>
-          <li>
-            <div class="btn-group" dropdown is-open="status.isopen">
-              <button type="button" class="btn btn-default dropdown-toggle navbar-btn" ng-disabled="disabled">
-                <i class="fa fa-user"></i> {{currentUser}} <span class="caret"></span>
-              </button>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href ng-click="about()">{{'common.about' | translate}}</a></li>
-                <li class="divider"></li>
-                <li><a href ng-click="signOut()">{{'common.signOut' | translate}}</a></li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </header>
+
+            <ul class="nav navbar-nav navbar-right navbar-iconic" style="margin-right: 10px;">
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle nav-item-iconic" id="dropdownMenu2" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="true">
+                        <span> {{currentUser}} </span> &nbsp;<span title="Username" class="fa pficon-user"></span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li></li>
+                        <li><a href ng-click="signOut()">{{'common.signOut' | translate}}</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </nav>
 </div>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3">
-      <div ng-include="'views/leftNavbar.html'" ng-controller="NavbarCtrl"></div>
+<div class="container main-container container-fluid container-cards-pf container-pf-nav-pf-vertical nav-pf-persistent-secondary">
+    <div class="row">
+        <div class="col-sm-3">
+            <div ng-include="'views/leftNavbar.html'" ng-controller="NavbarCtrl"></div>
+        </div>
+        <div class="col-sm-9">
+            <ng-view></ng-view>
+        </div>
     </div>
-    <div class="col-sm-9">
-      <ng-view></ng-view>
-    </div>
-  </div>
 </div>
 
 
