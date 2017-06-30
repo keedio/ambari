@@ -24,6 +24,7 @@ html {
 
 html, body {
   height: 100%;
+
 }
 
 wbr {
@@ -83,6 +84,8 @@ footer {
   }
 }
 /*Agregados kds que modifican patternfly*/
+
+
 .nav-pf-vertical .list-group-item>a {
 	height: 40px;
 	padding: 7px 20px 7px 25px;
@@ -104,6 +107,11 @@ footer {
 
 }
 
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover {
+  color: #000;
+  background-color: #ddd;
+  font-weight: bolder;
+}
 
 .nav-pf-vertical .list-group-item.active>a .fa, .nav-pf-vertical .list-group-item.active>a .glyphicon, .nav-pf-vertical .list-group-item.active>a .pficon, .nav-pf-vertical .list-group-item:hover>a .fa, .nav-pf-vertical .list-group-item:hover>a .glyphicon, .nav-pf-vertical .list-group-item:hover>a .pficon {
      color: #ffffff;
@@ -144,8 +152,7 @@ footer {
  
  
  .btn {
-  -webkit-border-radius: 7;
-  -moz-border-radius: 7;
+
   border-radius: 7px;
   background: #e9e9e9;
 
@@ -156,20 +163,29 @@ footer {
   text-decoration: none;
 }
 
+.btn-success {
+  color: #ffffff;
+  background: #00757e;
+  border: 0px;
+}
+
+a {
+  color: #00757e;
+  text-decoration: none;
+}
+
 .customlogin{
 border: 0px;
 }
 
 .btnlogin {
-  -webkit-border-radius: 4;
-  -moz-border-radius: 4;
-  border-radius: 4px;
+  border-radius: 20px;
+  background: #00757e;
+  border: 0px;
   color: #ffffff;
   background: #00757e;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  border-color:  #00757e;
-  border:0px;
   width: 356px;
   margin-top: 20px;
   font-family: 'TCM';
@@ -885,8 +901,10 @@ h1 {
   }
 
   .nav-header {
-    font-size: 13px;
+    font-size: 15px;
     padding-left: 0;
+    border-bottom: 2.5px solid #00757e;
+    text-align: center;
   }
   #installOptions {
     .sshKey-file-view {
@@ -1674,6 +1692,7 @@ a:focus {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
+  border: 0px;
 }
 /*****end styles for well *****/
 
@@ -4170,7 +4189,7 @@ table.graphs {
     background-color: @green;
     color: #ffffff;
     cursor: pointer;
-    font-weight: bold;
+    font-weight: inherit;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   }
 
